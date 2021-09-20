@@ -16,9 +16,11 @@ This exercice is adapted from the Tutorial of the program dna-pattern, accessibl
 1. In the **Pattern matching** menu, select **dna-pattern**
 2. In the **Query pattern(s) box**, you will enter the patterns to be searched for. Each pattern must come on a separate line. The first word of each line is the string description of the pattern, the second word is an identifier for this pattern. Type the following text in the Query pattern(s) box:
 
->GATAAG	  Gata_box
+```
+GATAAG	  Gata_box
 
->CCAAY	  Hap_site
+CCAAY	  Hap_site
+```
 
 Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second line means "either C or T".
 
@@ -43,7 +45,9 @@ Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second
 5.  Click on the **Feature map** button on the bottom of the result page. The results from the previous page have been automatically transferred to this form.
 6. In the Title box, type
 
->Gata boxes and Hap sites in the upstream regions of NIT genes
+```
+Gata boxes and Hap sites in the upstream regions of NIT genes
+```
 
 7. Leave other parameters unchanged and click **GO**.
 8. Save the image on your computer.
@@ -53,15 +57,26 @@ Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second
 >- Gata boxes appear in blue, Hap sites in red
 >- Color boxes are displayed either above or below the horizontal black lines, accordingly to the strand of the match.
     
-## B : Obtaining a matrix from a database
+## B : Estimating the amount of false positives
 
->You will retrieve the Gcn4 count matrix from the JASPAR database. 
-1. In the **Matrix tool** menu, select **retrieve matrix**
-2. Select as database **Jaspar**, then as collection **Jaspar core nonredundant Fungi**, then search for **Gcn4**
->The matrix appears in **transfac format**. You may download the file (link **output file**)
-3. At the bottom of the page in the "next step" box, click on the button **convert matrix** to automatically send the matrix to this program
-4. Run the program to produce a **logo**, if you click on it, you can download the **PDF file** (high-resolution format usable for publications)
+You will estimate the amount of false positives by re-running the exact same analysis, but using as input random sequences generated according to a realistic background model.
+In this **random control** case, the matches you will obtain are all **false-positives** (i.e., sites that are predicted to be a TFBS but that connot be since you are working with artifical non-biological sequences).
+>Start by generating the random sequences. 
 
-![plot](./hands-on/logoExercice1.png)
+1. In the **Build control sets** menu, select **random sequences**
+2. In the **template** section, upload your original sequence file. It will serve as template to generate the same number of sequences, of the exact same lengths as your original file
+3. Keep *Saccharomyces cerevisiae* as background model
+4. Click on **Go**
+5. **Save** on your computer the generated sequence file
+
+>Redo the previous analysis, taking as input this random sequence file
+
+1.  Redo steps 1-8 from A, using **this set of random sequences as input** (at step 3)
+
+    :question:Analyzing the results
+>You should obtain a feature map with the random sequences.
+>Do you see false positives (=spurious matches) in these random sequences ?
+>How many matches do you have with the original sequences ? How many with the random sequences ?
+>How confident are you when looking again at your original results ? Do you think all the matches are correct predictions ? 
 
 
