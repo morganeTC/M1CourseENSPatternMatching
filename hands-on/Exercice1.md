@@ -61,6 +61,6 @@ As input data, you will construct a matrix **from a multiple alignment**, and al
 3. At the bottom of the page in the "next step" box, click on the button **convert matrix** to automatically send the matrix to this program
 4. Run the program to produce a **logo**, if you click on it, you can download the **PDF file** (high-resolution format usable for publications)
 
-![plot](./hands-on/logoExercice1.png)
+![plot](/hands-on/logoExercice1.png)
 
 
