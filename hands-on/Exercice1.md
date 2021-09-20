@@ -51,3 +51,16 @@ As input data, you will construct a matrix **from a multiple alignment**, and al
     :question:Questions
     >The transfac format is very different from the tab format used before. What is the main difference ?
     This is the format used by the TRANSFAC database ; this format is used by many bioinformatics tools, and has the advantage of integrating a name and identifier (ID and AC fields) within the matrix format.
+    
+## B : Obtaining a matrix from a database
+
+>You will retrieve the Gcn4 count matrix from the JASPAR database. 
+1. In the **Matrix tool** menu, select **retrieve matrix**
+2. Select as database **Jaspar**, then as collection **Jaspar core nonredundant Fungi**, then search for **Gcn4**
+>The matrix appears in **transfac format**. You may download the file (link **output file**)
+3. At the bottom of the page in the "next step" box, click on the button **convert matrix** to automatically send the matrix to this program
+4. Run the program to produce a **logo**, if you click on it, you can download the **PDF file** (high-resolution format usable for publications)
+
+![plot](./hands-on/logoExercice1.png)
+
+
