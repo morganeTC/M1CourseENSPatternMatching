@@ -5,8 +5,9 @@
 ## Practical : Pattern-matching with RSAT
 
 [Exercise 1: Motif descriptors](/hands-on/Exercice1.md)
-*Constructing a personal matrix
-*Obtaining a matrix from a database
+
+1.Constructing a personal matrix
+2.Obtaining a matrix from a database
  
 [Exercise 2: String-based pattern matching](/hands-on/Exercice2.md)
 *Search for a motif described as a consensus sequence
