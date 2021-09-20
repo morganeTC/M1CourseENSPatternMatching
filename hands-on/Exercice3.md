@@ -12,7 +12,7 @@ You will follow in part this protocol: "Using RSAT to scan genome sequences for 
 
 3. In the **Pattern matching** menu, select **matrix-scan (quick)**
 4. Fill the **sequences** by providing the [upstream sequence (5500bp) of the eve gene](/files/2_eve_upstream_fasta.txt) (download on your computer first)
-5. The **Matrix** section allows specifying the transcription factor-binding motif(s). For the even-skipped study case, the [file in in Transfac format](/files/3_oreganno_eve_12_matrices.txt). Copy/paste the file with the 12 matrices in the Matrix box. In the menu Matrix format, **select 'transfac**'.
+5. The **Matrix** section allows specifying the transcription factor-binding motif(s). For the even-skipped study case, the [matrix file is in Transfac format](/files/3_oreganno_eve_12_matrices.txt). Copy/paste the file with the 12 matrices in the Matrix box. In the menu Matrix format, **select 'transfac**'.
 6. The next section of the form provides several options for specifying the **background model** (the statistical model for the sequences that do not correspond to instances of the motif). The choice of the background model crucially affects the results. For first analysis, select **Markov chain order 0**.
 7. Check the option **organism-specific**, and select _Drosophila melanogaster_ and **upstream-noorf**.
 8. The section **Scanning options** determines the scanning mode and the parameters to return. The selector **Origin** specifies whether the origin for reporting coordinates should be the end or the start of the sequences. By default, the **end** is considered as the origin, so that the hits are reported with negative coordinates for upstream sequences.
@@ -26,22 +26,9 @@ You will follow in part this protocol: "Using RSAT to scan genome sequences for 
 12. Then produce the **feature map**. For the option **color file**, provide [this file containing RGB color codes](/files/4_eve_color_file.txt). It ensures that the factors always have the same colors on the graphs.
 13. Save the figure   
 
-> You will now display the same results graphically, on a **feature map**.
-
-5.  Click on the **Feature map** button on the bottom of the result page. The results from the previous page have been automatically transferred to this form.
-6. In the Title box, type
-
-```
-Gata boxes and Hap sites in the upstream regions of NIT genes
-```
-
-7. Leave other parameters unchanged and click **GO**.
-8. Save the image on your computer.
-
     :question:Analyzing the results
->After a few seconds, the feature map should appear. A few comments:
->- Gata boxes appear in blue, Hap sites in red
->- Color boxes are displayed either above or below the horizontal black lines, accordingly to the strand of the match.
+>Compare your figure with Figure 8a (top) presenting the annotated TFBS. Do your predictions seems correct ?
+>Are you missing some (=false negative) or finding more (= potential false positives) ?
     
 ## B : Estimating the amount of false positives
 
