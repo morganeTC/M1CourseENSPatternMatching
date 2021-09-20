@@ -21,7 +21,8 @@ As input data, you will construct a matrix **from a multiple alignment**, and al
 
 3. Copy the following alignement in the matrix box, and select as format **sequences**
 
-    ```\>1
+    ```
+    >1
     TGACAA
     >2
     TGACAG
