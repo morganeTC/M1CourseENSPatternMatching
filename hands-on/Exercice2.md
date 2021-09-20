@@ -22,14 +22,22 @@ This exercice is adapted from the Tutorial of the program dna-pattern, accessibl
 
 Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second line means "either C or T".
 
-3. For the **sequences**, download this [sequence file](/files/1_sequences_fasta.txt), then select it from your computer in the **sequence** section
+3. For the **sequences**, download (right-click, save as..) this [sequence file](/files/1_sequences_fasta.txt), then select it from your computer in the **sequence** section
 4. Leave all other parameters unchanged and click **GO**.
 
-    :question:Questions
-    >Compare the computed matrix with the one you made manually during the course.
-    Look at the consensus sequence under the matrix. Is it strict or degenerate ? Compare it with the one you made manually during the course.
-    Have a look at the logo, note how the height in each column is different.
-    
+    :question:Analyzing the results
+    >You see now the positions of all matches with the patterns you entered within the upstream sequences of the selected genes. Each line shows a single match, and the different columns indicate respectively:
+>- pattern identifier
+>- strand on which the match was found (D for direct, R for Reverse)
+>- pattern searched for (i.e. the query strings you provided)
+>- name of the sequence in which it was found
+>- starting position of the match
+>- end position of the match
+>- match sequence. The matching bases are indicated in UPPERCASES. The 4 flanking bases at left and right are in lowercases.
+>- matching score. In this case all scores equal 1
+
+>Notice that positions are returned in negative coordinates, relative to the end of the sequence (the last nucleotide has position -1). This behaviour was selected with the "Origin" option in the dna-pattern form (Origin=end). This option is particularly useful for analyzing regulatory sequences, but it can be inactivated in other cases.    
+
 6. Go back to the previous page, rerun the program by choosing as **output format transfac**
 
     :question:Questions
