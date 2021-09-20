@@ -11,38 +11,20 @@ You will follow in part this protocol: "Using RSAT to scan genome sequences for 
 >matrix-scan allows a wide range of analyses, but is slow. For the prediction of TFBS, RSAT now offers a faster program called matrix-scan-quick that you will use today. 
 
 3. In the **Pattern matching** menu, select **matrix-scan (quick)**
-4. Fill the **sequences** by providing the [upstream sequence (5500bp) of the eve gene](/hands-on/2_eve_upstream_fasta.txt) (download on your computer first)
-5. The **Matrix** section allows specifying the transcription factor-binding motif(s). For the even-skipped study case, the file in in Transfac format. Copy/paste the file with the 12 matrices in the Matrix box. In the menu Matrix format, **select 'transfac**'.
-The next section of the form provides several options for specifying the background model (the statistical model for the sequences that do not correspond to instances of the motif). The choice of the background model crucially affects the results. For first analysis, select Markov chain order 0.
-Check the option organism-specific, and select Drosophila melanogaster and upstream-noorf.
-The section Scanning options determines the scanning mode and the parameters to return. The selector Origin specifies whether the origin for reporting coordinates should be the end or the start of the sequences. By default, the end is considered as the origin, so that the hits are reported with negative coordinates for upstream sequences.
-Select return sites + pval to compute the p-values associated to each predicted site.
-Defining a threshold on the P-value is the preferred approach. Set the value to 1e-4
-Click GO.
-
-```
-GATAAG	  Gata_box
-
-CCAAY	  Hap_site
-```
-
-Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second line means "either C or T".
-
-3. For the **sequences**, download (right-click, save as..) this [sequence file](/files/1_sequences_fasta.txt), then select it from your computer in the **sequence** section
-4. Leave all other parameters unchanged and click **GO**.
+4. Fill the **sequences** by providing the [upstream sequence (5500bp) of the eve gene](/files/2_eve_upstream_fasta.txt) (download on your computer first)
+5. The **Matrix** section allows specifying the transcription factor-binding motif(s). For the even-skipped study case, the [file in in Transfac format](/files/3_oreganno_eve_12_matrices.txt). Copy/paste the file with the 12 matrices in the Matrix box. In the menu Matrix format, **select 'transfac**'.
+6. The next section of the form provides several options for specifying the **background model** (the statistical model for the sequences that do not correspond to instances of the motif). The choice of the background model crucially affects the results. For first analysis, select **Markov chain order 0**.
+7. Check the option **organism-specific**, and select _Drosophila melanogaster_ and **upstream-noorf**.
+8. The section **Scanning options** determines the scanning mode and the parameters to return. The selector **Origin** specifies whether the origin for reporting coordinates should be the end or the start of the sequences. By default, the **end** is considered as the origin, so that the hits are reported with negative coordinates for upstream sequences.
+9. Select **return sites + pval** to compute the p-values associated to each predicted site.
+10. Defining a **threshold** on the **P-value** is the preferred approach. Set the value to **1e-4**
+11. Click **GO**.
 
     :question:Analyzing the results
->You see now the positions of all matches with the patterns you entered within the upstream sequences of the selected genes. Each line shows a single match, and the different columns indicate respectively:
->- pattern identifier
->- strand on which the match was found (D for direct, R for Reverse)
->- pattern searched for (i.e. the query strings you provided)
->- name of the sequence in which it was found
->- starting position of the match
->- end position of the match
->- match sequence. The matching bases are indicated in UPPERCASES. The 4 flanking bases at left and right are in lowercases.
->- matching score. In this case all scores equal 1
+>How many predictions do you obtain for these factors ? Given the p-value threshold, how many false positives do you expect in this region ? 
 
->Notice that positions are returned in negative coordinates, relative to the end of the sequence (the last nucleotide has position -1). This behaviour was selected with the "Origin" option in the dna-pattern form (Origin=end). This option is particularly useful for analyzing regulatory sequences, but it can be inactivated in other cases.    
+12. Then produce the **feature map**. For the option **color file**, provide [this file containing RGB color codes](/files/4_eve_color_file.txt). It ensures that the factors always have the same colors on the graphs.
+13. Save the figure   
 
 > You will now display the same results graphically, on a **feature map**.
 
