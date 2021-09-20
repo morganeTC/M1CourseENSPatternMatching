@@ -12,16 +12,16 @@ You will use the program **convert-matrix** from the RSA-tools suite. This tool 
 
 As input data, you will construct a matrix **from a multiple alignment**, and also fetch a count matrix from the **JASPAR database**. The matrices describes the binding motifs of transcription factors seen in the course (**Meis and Gcn4**). 
 
-# A : Constructing a personal matrix
+## A : Constructing a personal matrix
 
 1. Go to the [RSAT teaching server](http://pedagogix-tagc.univ-mrs.fr/rsat/)
 2. In the **Matrix tool** menu, select **convert matrix**
-    You will construct a count matrix for the factor Meis, from the multiple alignment of TFBS extracted from various vertebrate genomes. The alignment is in FASTA format.
-    Note that the tool allows to convert to a wide range of formats.
+
+>You will construct a count matrix for the factor Meis, from the multiple alignment of TFBS extracted from various vertebrate genomes. The alignment is in FASTA format. Note that the tool allows to convert to a wide range of formats.
 
 3. Copy the following alignement in the matrix box, and select as format **sequences**
 
-    >1
+    ```\>1
     TGACAA
     >2
     TGACAG
@@ -37,16 +37,17 @@ As input data, you will construct a matrix **from a multiple alignment**, and al
     TGACAG
     >8
     TGACAG
-
+    ```
 4. The **background model** is not used in this exercice, you can leave the default option
 5. Click on **Go** to run the program with default parameters
 
-    Questions
-    Compare the computed matrix with the one you made manually during the course.
+    :question:Questions
+    >Compare the computed matrix with the one you made manually during the course.
     Look at the consensus sequence under the matrix. Is it strict or degenerate ? Compare it with the one you made manually during the course.
     Have a look at the logo, note how the height in each column is different.
-    Go back to the previous page, rerun the program by choosing as output format transfac
+    
+6. Go back to the previous page, rerun the program by choosing as **output format transfac**
 
-    Questions
-    The transfac format is very different from the tab format used before. What is the main difference ?
+    :question:Questions
+    >The transfac format is very different from the tab format used before. What is the main difference ?
     This is the format used by the TRANSFAC database ; this format is used by many bioinformatics tools, and has the advantage of integrating a name and identifier (ID and AC fields) within the matrix format.
