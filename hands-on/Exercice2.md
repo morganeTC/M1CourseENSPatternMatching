@@ -79,4 +79,4 @@ In this **random control** case, the matches you will obtain are all **false-pos
 >How many matches do you have with the original sequences ? How many with the random sequences ?
 >How confident are you when looking again at your original results ? Do you think all the matches are correct predictions ? 
 
-
+:warning: The **control** shows that a high number of predictions are actually **false positives** ! Keep in mind that spurious matches are expected to be found in any sequences, just by chance. 
