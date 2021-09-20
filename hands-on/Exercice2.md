@@ -26,7 +26,7 @@ Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second
 4. Leave all other parameters unchanged and click **GO**.
 
     :question:Analyzing the results
-    >You see now the positions of all matches with the patterns you entered within the upstream sequences of the selected genes. Each line shows a single match, and the different columns indicate respectively:
+>You see now the positions of all matches with the patterns you entered within the upstream sequences of the selected genes. Each line shows a single match, and the different columns indicate respectively:
 >- pattern identifier
 >- strand on which the match was found (D for direct, R for Reverse)
 >- pattern searched for (i.e. the query strings you provided)
@@ -38,11 +38,20 @@ Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second
 
 >Notice that positions are returned in negative coordinates, relative to the end of the sequence (the last nucleotide has position -1). This behaviour was selected with the "Origin" option in the dna-pattern form (Origin=end). This option is particularly useful for analyzing regulatory sequences, but it can be inactivated in other cases.    
 
-6. Go back to the previous page, rerun the program by choosing as **output format transfac**
+> You will now display the same results graphically, on a **feature map**.
 
-    :question:Questions
-    >The transfac format is very different from the tab format used before. What is the main difference ?
-    This is the format used by the TRANSFAC database ; this format is used by many bioinformatics tools, and has the advantage of integrating a name and identifier (ID and AC fields) within the matrix format.
+5.  Click on the **Feature map** button on the bottom of the result page. The results from the previous page have been automatically transferred to this form.
+6. In the Title box, type
+
+>Gata boxes and Hap sites in the upstream regions of NIT genes
+
+7. Leave other parameters unchanged and click **GO**.
+8. Save the image on your computer.
+
+    :question:Analyzing the results
+>After a few seconds, the feature map should appear. A few comments:
+>- Gata boxes appear in blue, Hap sites in red
+>- Color boxes are displayed either above or below the horizontal black lines, accordingly to the strand of the match.
     
 ## B : Obtaining a matrix from a database
 
