@@ -24,7 +24,7 @@ CCAAY	  Hap_site
 
 Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second line means "either C or T".
 
-3. For the **sequences**, download (right-click, save as..) this [sequence file](/files/1_sequences_fasta.txt), then select it from your computer in the **sequence** section
+3. For the **sequences**, either download (right-click, save as..) this [sequence file](/files/1_sequences_fasta.txt), or if you have downloaded the entire folder of this practical => in the files folder. Then select it from your computer in the **sequence** section
 4. Leave all other parameters unchanged and click **GO**.
 
     :question:Analyzing the results
