@@ -1,45 +1,29 @@
-# Exercice 1 : motif descriptors
+# Exercice 2 : String-based pattern matching
 
-The goal of this first exercice is to manipulate different motif descriptors: **consensus sequences** and **count matrices**.
-You will use the program **convert-matrix** from the RSA-tools suite. This tool allows to :
+The goal of the second and third exercices is to learn how to search for a known motif within a DNA sequence of interest.
+This technique is here applied to predict transcription factor binding sites (TFBS), but it may be applied to search for other biological signals such as exon/intron boundaries, restriction sites... From the RSA-tools suite, you will use the programs:
 
-    Perform interconversions between various matrix formats
-    Produce consensus and regular expression descriptors
-    Calculate various statistics on the PSSMs
-    Reverse PSSMs
-    Permute PSSMs
-    Construct logos
+- **dna-pattern** with motifs described as consensus sequences => Exercise 2
+- **matrix-scan** with motifs described as matrices => Exercise 3
 
-As input data, you will construct a matrix **from a multiple alignment**, and also fetch a count matrix from the **JASPAR database**. The matrices describes the binding motifs of transcription factors seen in the course (**Meis and Gcn4**). 
+You will also learn to estimate the rate of false positive predictions and use appropriate controls to evaluate your results. 
 
-## A : Constructing a personal matrix
+## A : Search for a motif described as a consensus sequence
 
-1. Go to the [RSAT teaching server](http://pedagogix-tagc.univ-mrs.fr/rsat/)
-2. In the **Matrix tool** menu, select **convert matrix**
+You have a list of upstream regions of a selection of nitrogen-responding genes in the yeast, you will search the positions of putative GATA boxes and Hap sites within these regions of 800bp.
+This exercice is adapted from the Tutorial of the program dna-pattern, accessible from the RSAT website at the bottom of the tool form. 
 
->You will construct a count matrix for the factor Meis, from the multiple alignment of TFBS extracted from various vertebrate genomes. The alignment is in FASTA format. Note that the tool allows to convert to a wide range of formats.
+1. In the **Pattern matching** menu, select **dna-pattern**
+2. In the **Query pattern(s) box**, you will enter the patterns to be searched for. Each pattern must come on a separate line. The first word of each line is the string description of the pattern, the second word is an identifier for this pattern. Type the following text in the Query pattern(s) box:
 
-3. Copy the following alignement in the matrix box, and select as format **sequences**
+>GATAAG	  Gata_box
 
-    ```\>1
-    TGACAA
-    >2
-    TGACAG
-    >3
-    TGATGG
-    >4
-    TGACAA
-    >5
-    TGGCAG
-    >6
-    TGATTG
-    >7
-    TGACAG
-    >8
-    TGACAG
-    ```
-4. The **background model** is not used in this exercice, you can leave the default option
-5. Click on **Go** to run the program with default parameters
+>CCAAY	  Hap_site
+
+Note the use of degenerate IUPAC degenerate code: the Y from CCAAY on the second line means "either C or T".
+
+3. For the **sequences**, download this [sequence file](/files/1_sequences_fasta.txt), then select it from your computer in the **sequence** section
+4. Leave all other parameters unchanged and click **GO**.
 
     :question:Questions
     >Compare the computed matrix with the one you made manually during the course.
