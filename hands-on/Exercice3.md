@@ -33,23 +33,19 @@ You will follow in part this protocol: "Using RSAT to scan genome sequences for 
 ## B : Estimating the amount of false positives
 
 You will estimate the amount of false positives by re-running the exact same analysis, but using as input random sequences generated according to a realistic background model.
-In this **random control** case, the matches you will obtain are all **false-positives** (i.e., sites that are predicted to be a TFBS but that connot be since you are working with artifical non-biological sequences).
+In this random control case, the matches you will obtain are all false-positives (ie sites that are predicted to be a TFBS but that connot be since you are working with artifical non-biological sequences).
 >Start by generating the random sequences. 
 
 1. In the **Build control sets** menu, select **random sequences**
-2. In the **template** section, upload your original sequence file. It will serve as template to generate the same number of sequences, of the exact same lengths as your original file
-3. Keep *Saccharomyces cerevisiae* as background model
-4. Click on **Go**
-5. **Save** on your computer the generated sequence file
-
->Redo the previous analysis, taking as input this random sequence file
-
-1.  Redo steps 1-8 from A, using **this set of random sequences as input** (at step 3)
+2.  For the **sequence length** : 5500 (same length as the eve upstream region)
+3. Number of sequences : **10** 
+4. In the **Background** section, select the background model that will serve to produce the random sequence. Choose _Drosophila melanogaster_ for the organism. Keep oligonucleotide size to **6** to use a Markov background model of order 5 (read Box 3 for details on Markov models).
+5. Click on **Go**
+6. Save the generated sequence file
+7. Redo steps 3-13 above (only for threshold 1e-4), using this set of **random sequences as input** (step 4) 
 
     :question:Analyzing the results
->You should obtain a feature map with the random sequences.
->Do you see false positives (=spurious matches) in these random sequences ?
->How many matches do you have with the original sequences ? How many with the random sequences ?
->How confident are you when looking again at your original results ? Do you think all the matches are correct predictions ? 
+>How many predictions do you obtain for these factors ?
+>Does that correspond to the expected number of false-positives ? 
 
-:warning: The **control** shows that a high number of predictions are actually **false positives** ! Keep in mind that spurious matches are expected to be found in any sequences, just by chance. 
+:fast_forward: The protocol also presents random controls in the form of **randomly selected regions**, which are biological sequences instead of artificial ones. Other controls like permuting the matrices are also common in research projects. If you're interested to go further, the protocol also presents the search for regulatory modules (CRERs).  
