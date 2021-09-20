@@ -1,20 +1,24 @@
-# Exercice 2 : String-based pattern matching
+# Exercice 3 : Matrix-based pattern matching
 
-The goal of the second and third exercices is to learn how to search for a known motif within a DNA sequence of interest.
-This technique is here applied to predict transcription factor binding sites (TFBS), but it may be applied to search for other biological signals such as exon/intron boundaries, restriction sites... From the RSA-tools suite, you will use the programs:
+## A : Search for a motif described as a matrix
 
-- **dna-pattern** with motifs described as consensus sequences => Exercise 2
-- **matrix-scan** with motifs described as matrices => Exercise 3
+You will scan the upstream region of the gene **even-skipped (eve)** from the _Drosophila melanogaster_ genome with 12 matrices, representing the binding specificity of 12 factors that are known to regulate this gene. The aim is to locate the putative binding sites for these 12 factors.
 
-You will also learn to estimate the rate of false positive predictions and use appropriate controls to evaluate your results. 
+You will follow in part this protocol: "Using RSAT to scan genome sequences for transcription factor binding sites and cis-regulatory modules" by Turatsinze, Thomas-Chollier et al, Nature Protocols (2008). Although not recent, the theoretical aspects are still valid. The PDF is not open-access, it is available on Moodle.
 
-## A : Search for a motif described as a consensus sequence
+1. Open the article, read the **Introduction** until "Procedure"
+2. Read **Box 1** and **Box 2**
+>matrix-scan allows a wide range of analyses, but is slow. For the prediction of TFBS, RSAT now offers a faster program called matrix-scan-quick that you will use today. 
 
-You have a list of upstream regions of a selection of nitrogen-responding genes in the yeast, you will search the positions of putative GATA boxes and Hap sites within these regions of 800bp.
-This exercice is adapted from the Tutorial of the program dna-pattern, accessible from the RSAT website at the bottom of the tool form. 
-
-1. In the **Pattern matching** menu, select **dna-pattern**
-2. In the **Query pattern(s) box**, you will enter the patterns to be searched for. Each pattern must come on a separate line. The first word of each line is the string description of the pattern, the second word is an identifier for this pattern. Type the following text in the Query pattern(s) box:
+3. In the **Pattern matching** menu, select **matrix-scan (quick)**
+4. Fill the **sequences** by providing the [upstream sequence (5500bp) of the eve gene](/hands-on/2_eve_upstream_fasta.txt) (download on your computer first)
+5. The **Matrix** section allows specifying the transcription factor-binding motif(s). For the even-skipped study case, the file in in Transfac format. Copy/paste the file with the 12 matrices in the Matrix box. In the menu Matrix format, **select 'transfac**'.
+The next section of the form provides several options for specifying the background model (the statistical model for the sequences that do not correspond to instances of the motif). The choice of the background model crucially affects the results. For first analysis, select Markov chain order 0.
+Check the option organism-specific, and select Drosophila melanogaster and upstream-noorf.
+The section Scanning options determines the scanning mode and the parameters to return. The selector Origin specifies whether the origin for reporting coordinates should be the end or the start of the sequences. By default, the end is considered as the origin, so that the hits are reported with negative coordinates for upstream sequences.
+Select return sites + pval to compute the p-values associated to each predicted site.
+Defining a threshold on the P-value is the preferred approach. Set the value to 1e-4
+Click GO.
 
 ```
 GATAAG	  Gata_box
